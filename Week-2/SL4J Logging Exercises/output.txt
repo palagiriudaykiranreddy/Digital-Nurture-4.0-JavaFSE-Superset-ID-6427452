@@ -1,0 +1,61 @@
+SLF4J Logging Exercise - Expected Console Output
+======================================================
+
+22:44:15.123 [main] INFO  com.example.LoggingExample - Starting SLF4J Logging Example Application
+22:44:15.125 [main] INFO  com.example.LoggingExample - === Demonstrating Different Logging Levels ===
+22:44:15.126 [main] ERROR com.example.LoggingExample - This is an error message - something went wrong!
+22:44:15.126 [main] WARN  com.example.LoggingExample - This is a warning message - be careful!
+22:44:15.127 [main] INFO  com.example.LoggingExample - This is an info message - general information
+22:44:15.127 [main] DEBUG com.example.LoggingExample - This is a debug message - detailed debugging info
+22:44:15.128 [main] TRACE com.example.LoggingExample - This is a trace message - very detailed tracing info
+22:44:15.128 [main] INFO  com.example.LoggingExample - === Simulating Application Workflow ===
+22:44:15.129 [main] INFO  com.example.LoggingExample - Initializing application components...
+22:44:15.129 [main] DEBUG com.example.LoggingExample - Processing user data...
+22:44:15.130 [main] WARN  com.example.LoggingExample - User session timeout is approaching
+22:44:15.130 [main] INFO  com.example.LoggingExample - Data processing completed successfully
+22:44:15.131 [main] DEBUG com.example.LoggingExample - Attempting risky operation...
+22:44:15.132 [main] ERROR com.example.LoggingExample - Mathematical error occurred: Division by zero
+java.lang.ArithmeticException: / by zero
+	at com.example.LoggingExample.simulateErrorCondition(LoggingExample.java:78)
+	at com.example.LoggingExample.simulateApplicationWorkflow(LoggingExample.java:62)
+	at com.example.LoggingExample.main(LoggingExample.java:19)
+22:44:15.133 [main] WARN  com.example.LoggingExample - Continuing execution with default values
+22:44:15.133 [main] INFO  com.example.LoggingExample - SLF4J Logging Example Application completed
+
+======================================================
+Log File Output (logs/application.log)
+======================================================
+
+2025-06-25 22:44:15.123 [main] INFO  com.example.LoggingExample - Starting SLF4J Logging Example Application
+2025-06-25 22:44:15.125 [main] INFO  com.example.LoggingExample - === Demonstrating Different Logging Levels ===
+2025-06-25 22:44:15.126 [main] ERROR com.example.LoggingExample - This is an error message - something went wrong!
+2025-06-25 22:44:15.126 [main] WARN  com.example.LoggingExample - This is a warning message - be careful!
+2025-06-25 22:44:15.127 [main] INFO  com.example.LoggingExample - This is an info message - general information
+2025-06-25 22:44:15.127 [main] DEBUG com.example.LoggingExample - This is a debug message - detailed debugging info
+2025-06-25 22:44:15.128 [main] TRACE com.example.LoggingExample - This is a trace message - very detailed tracing info
+2025-06-25 22:44:15.128 [main] INFO  com.example.LoggingExample - === Simulating Application Workflow ===
+2025-06-25 22:44:15.129 [main] INFO  com.example.LoggingExample - Initializing application components...
+2025-06-25 22:44:15.129 [main] DEBUG com.example.LoggingExample - Processing user data...
+2025-06-25 22:44:15.130 [main] WARN  com.example.LoggingExample - User session timeout is approaching
+2025-06-25 22:44:15.130 [main] INFO  com.example.LoggingExample - Data processing completed successfully
+2025-06-25 22:44:15.131 [main] DEBUG com.example.LoggingExample - Attempting risky operation...
+2025-06-25 22:44:15.132 [main] ERROR com.example.LoggingExample - Mathematical error occurred: Division by zero
+java.lang.ArithmeticException: / by zero
+	at com.example.LoggingExample.simulateErrorCondition(LoggingExample.java:78)
+	at com.example.LoggingExample.simulateApplicationWorkflow(LoggingExample.java:62)
+	at com.example.LoggingExample.main(LoggingExample.java:19)
+2025-06-25 22:44:15.133 [main] WARN  com.example.LoggingExample - Continuing execution with default values
+2025-06-25 22:44:15.133 [main] INFO  com.example.LoggingExample - SLF4J Logging Example Application completed
+
+======================================================
+Key Points Demonstrated:
+======================================================
+
+1. ERROR Level: Used for error events that might still allow the application to continue running
+2. WARN Level: Used for potentially harmful situations that aren't necessarily errors
+3. INFO Level: Used for informational messages that highlight the progress of the application
+4. DEBUG Level: Used for detailed information that is useful when diagnosing problems
+5. TRACE Level: Used for very detailed information, typically only of interest when diagnosing problems
+
+The application shows both console output (with time format HH:mm:ss.SSS) and file output 
+(with full timestamp yyyy-MM-dd HH:mm:ss.SSS) as configured in logback.xml. 

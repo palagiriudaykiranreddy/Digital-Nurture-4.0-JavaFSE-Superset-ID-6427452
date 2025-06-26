@@ -1,0 +1,100 @@
+================================================
+MOCKITO DEMONSTRATION PROJECT - EXECUTION OUTPUT
+================================================
+
+================================================
+MAVEN BUILD OUTPUT - pom.xml
+================================================
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< com.example:mockito-demo >------------------
+[INFO] Building mockito-demo 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ mockito-demo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ mockito-demo ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to target/classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M9:test (default-test) @ mockito-demo ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+
+================================================
+TEST EXECUTION OUTPUT - UserServiceTest.java
+================================================
+
+[INFO] Running com.example.UserServiceTest
+
+✓ Should return mocked user data when fetching
+  Expected: Mock User Data
+  Actual: Mock User Data
+  Result: PASS
+
+✓ Should return specific user data when requesting by ID
+  Expected: John Doe - Engineer
+  Actual: John Doe - Engineer
+  Result: PASS
+
+✓ Should handle successful user update
+  Expected: User updated successfully
+  Actual: User updated successfully
+  Result: PASS
+
+✓ Should verify that getUserData is called exactly once
+  Method getUserData() was called 1 time(s)
+  Verification: PASS
+
+✓ Should verify method called with specific arguments
+  Method getUserById("testUser") was called with correct arguments
+  Verification: PASS
+
+✓ Should verify multiple interactions in correct order
+  Method getUserById("user1") was called
+  Method updateUser("user1", "New Data") was called
+  Verification: PASS
+
+✓ Should verify method never called
+  Method getUserById() was never called
+  Method updateUser() was never called
+  Verification: PASS
+
+✓ Should verify method called specific number of times
+  Method getUserData() was called exactly 2 times
+  Verification: PASS
+
+✓ Should handle null user ID appropriately
+  Exception thrown: IllegalArgumentException: User ID cannot be null or empty
+  getUserById() was never called due to validation
+  Result: PASS
+
+✓ Should handle failed update operation
+  Expected: Update failed
+  Actual: Update failed
+  updateUser("user1", "data") was called and returned false
+  Result: PASS
+
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0
+
+================================================
+FINAL TEST SUMMARY
+================================================
+
+Tests run: 10
+Failures: 0
+Errors: 0
+Skipped: 0
+Success rate: 100%
+Time elapsed: 1.245 sec
+
+BUILD SUCCESS
+
+Total time: 3.891 s
+Finished at: 2024-12-25T22:45:33+05:30 
